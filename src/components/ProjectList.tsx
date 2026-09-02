@@ -6,6 +6,7 @@ import ListItemText from '@mui/material/ListItemText'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import type { Project } from '../types'
+import { Link } from 'react-router-dom'
 
 interface ProjectListProps {
   projects: Project[]
@@ -37,12 +38,15 @@ export function ProjectList({ projects, loading, error }: ProjectListProps) {
       </Typography>
       <List>
         {projects.map((project) => (
-          <ListItem key={project.id} divider>
-            <ListItemText
-              primary={project.name}
-              secondary={project.description || `ID ${project.id}`}
-            />
-          </ListItem>
+          <Link key={project.id} to={`/projects/${project.id}`}>
+            <ListItem divider>
+              <ListItemText
+                primary={project.name}
+                secondary={project.description || `ID ${project.id}`}
+              />
+            </ListItem>
+
+          </Link>
         ))}
       </List>
     </>
