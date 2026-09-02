@@ -80,6 +80,18 @@ body {
   font-weight: 700;
 }
 
+.todo-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.todo-page-header h1 {
+  margin: 0;
+}
+
 .todo-list {
   display: grid;
   gap: 12px;
@@ -103,12 +115,12 @@ body {
   font-weight: 650;
 }
 
-.todo-item__content p {
+.todo-item-content p {
   color: #697386;
   font-size: 15px;
 }
 
-.todo-item__details {
+.todo-item-details {
   display: grid;
   flex-shrink: 0;
   gap: 6px;
@@ -135,6 +147,10 @@ body {
 
   .todo-page h1 {
     font-size: 30px;
+  }
+
+  .todo-page-header {
+    align-items: flex-start;
   }
 
   .todo-item {

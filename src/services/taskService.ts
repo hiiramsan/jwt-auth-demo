@@ -7,9 +7,9 @@ export async function getTasks(projectId: number | null): Promise<Task[]> {
     return response.data;
 }
 
-export async function createProject(body: NewTask, projectId: number): Promise<Task> {
- 
+export async function createProjectTask(body: NewTask, projectId: number): Promise<Task> {
     const { data } = await httpClient.post<Task>(`/projects/${projectId}/tasks`, body);
     return data;
 
 }
+
